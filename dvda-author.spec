@@ -10,6 +10,7 @@ BuildRequires:	curl sox-devel
 BuildRequires:	oggvorbis-devel libflac-devel help2man
 Requires:	dvdauthor spumux mkisofs cdrkit
 Requires:	mjpegtools ImageMagick
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 dvda-author creates high-definition DVD-Audio discs with navigable DVD-Video
