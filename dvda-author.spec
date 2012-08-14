@@ -1,16 +1,15 @@
 Summary:	High-definition DVD-AUDIO disc creator
 Name:		dvda-author
 Version:	09.09
-Release:	%mkrel 2
+Release:	3
 License:	GPLv3
 Group:		Archiving/Cd burning
 Source0:	%{name}-%{version}-60.tar.lzma
 URL:		http://dvd-audio.sourceforge.net/
 BuildRequires:	curl sox-devel
 BuildRequires:	oggvorbis-devel libflac-devel help2man
-Requires:	dvdauthor spumux mkisofs cdrkit
+Requires:	dvdauthor mkisofs cdrkit
 Requires:	mjpegtools ImageMagick
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 dvda-author creates high-definition DVD-Audio discs with navigable DVD-Video
@@ -37,13 +36,11 @@ Both types of constructions can be combined.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 %find_lang %{name}
 
 %clean 
-rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root, root)
