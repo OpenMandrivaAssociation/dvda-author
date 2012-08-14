@@ -38,11 +38,9 @@ Both types of constructions can be combined.
 %install
 %makeinstall_std
 
-%find_lang %{name}
-
 %clean 
 
-%files -f %{name}.lang
+%files
 %defattr(-,root, root)
 %doc %{_datadir}/doc/%{name}/*
 %{_bindir}/%{name}
