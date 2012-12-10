@@ -1,7 +1,7 @@
 Summary:	High-definition DVD-AUDIO disc creator
 Name:		dvda-author
 Version:	09.09
-Release:	3
+Release:	4
 License:	GPLv3
 Group:		Archiving/Cd burning
 Source0:	%{name}-%{version}-60.tar.lzma
@@ -9,7 +9,9 @@ URL:		http://dvd-audio.sourceforge.net/
 BuildRequires:	curl sox-devel
 BuildRequires:	oggvorbis-devel libflac-devel help2man
 Requires:	dvdauthor mkisofs cdrkit
-Requires:	mjpegtools ImageMagick
+Requires:	mjpegtools imagemagick
+
+%define debug_package %{nil}
 
 %description
 dvda-author creates high-definition DVD-Audio discs with navigable DVD-Video
@@ -49,3 +51,21 @@ Both types of constructions can be combined.
 %{_datadir}/pixmaps/%{name}*.png
 %{_mandir}/man1/%{name}.1*
 
+
+
+%changelog
+* Tue Aug 14 2012 Denis Silakov <dsilakov@mandriva.org> 09.09-3
++ Revision: 814784
+- Dropped unneeded dependency
+
+* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 09.09-2mdv2011.0
++ Revision: 610302
+- rebuild
+
+* Fri Dec 25 2009 Per Øyvind Karlsen <peroyvind@mandriva.org> 09.09-1mdv2010.1
++ Revision: 482263
+- import dvda-author
+
+
+* Fri Dec 25 2009 Per Øyvind Karlsen <peroyvind@mandriva.org> 09.09-1
+- initial release
