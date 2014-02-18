@@ -1,17 +1,24 @@
+%define debug_package %{nil}
+
 Summary:	High-definition DVD-AUDIO disc creator
 Name:		dvda-author
 Version:	09.09
-Release:	4
-License:	GPLv3
+Release:	1
+License:	GPLv3+
 Group:		Archiving/Cd burning
+# Repack, drop built binaries etc from upstream tarball
+Url:		http://dvd-audio.sourceforge.net/
 Source0:	%{name}-%{version}-60.tar.lzma
-URL:		http://dvd-audio.sourceforge.net/
-BuildRequires:	curl sox-devel
-BuildRequires:	oggvorbis-devel libflac-devel help2man
-Requires:	dvdauthor mkisofs cdrkit
-Requires:	mjpegtools imagemagick
-
-%define debug_package %{nil}
+BuildRequires:	curl
+BuildRequires:	help2man
+BuildRequires:	pkgconfig(flac)
+BuildRequires:	pkgconfig(sox)
+BuildRequires:	pkgconfig(vorbis)
+Requires:	cdrkit
+Requires:	dvdauthor
+Requires:	imagemagick
+Requires:	mkisofs
+Requires:	mjpegtools
 
 %description
 dvda-author creates high-definition DVD-Audio discs with navigable DVD-Video
@@ -30,6 +37,15 @@ dvda-author -i ~/audio/audio_input_directory -o DVD_HYBRID -V ~/Video/VID -T 2
 
 Both types of constructions can be combined.
 
+%files
+%doc %{_datadir}/doc/%{name}/*
+%{_bindir}/%{name}
+%{_datadir}/applications/%{name}/
+%{_datadir}/pixmaps/%{name}*.png
+%{_mandir}/man1/%{name}.1*
+
+#----------------------------------------------------------------------------
+
 %prep
 %setup -q
 
@@ -40,32 +56,3 @@ Both types of constructions can be combined.
 %install
 %makeinstall_std
 
-%clean 
-
-%files
-%defattr(-,root, root)
-%doc %{_datadir}/doc/%{name}/*
-%{_bindir}/%{name}
-%dir %{_datadir}/applications/%{name}
-%{_datadir}/applications/%{name}/*
-%{_datadir}/pixmaps/%{name}*.png
-%{_mandir}/man1/%{name}.1*
-
-
-
-%changelog
-* Tue Aug 14 2012 Denis Silakov <dsilakov@mandriva.org> 09.09-3
-+ Revision: 814784
-- Dropped unneeded dependency
-
-* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 09.09-2mdv2011.0
-+ Revision: 610302
-- rebuild
-
-* Fri Dec 25 2009 Per Øyvind Karlsen <peroyvind@mandriva.org> 09.09-1mdv2010.1
-+ Revision: 482263
-- import dvda-author
-
-
-* Fri Dec 25 2009 Per Øyvind Karlsen <peroyvind@mandriva.org> 09.09-1
-- initial release
