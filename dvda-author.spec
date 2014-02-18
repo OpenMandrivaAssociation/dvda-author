@@ -3,7 +3,7 @@
 Summary:	High-definition DVD-AUDIO disc creator
 Name:		dvda-author
 Version:	09.09
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		Archiving/Cd burning
 # Repack, drop built binaries etc from upstream tarball
