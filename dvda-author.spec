@@ -7,7 +7,7 @@ Release:	3
 License:	GPLv3+
 Group:		Archiving/Cd burning
 # Repack, drop built binaries etc from upstream tarball
-Url:		http://dvd-audio.sourceforge.net/
+Url:		https://dvd-audio.sourceforge.net/
 Source0:	%{name}-%{version}-60.tar.lzma
 BuildRequires:	curl
 BuildRequires:	help2man
