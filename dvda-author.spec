@@ -9,6 +9,11 @@ Group:		Archiving/Cd burning
 # Repack, drop built binaries etc from upstream tarball
 Url:		https://dvd-audio.sourceforge.net/
 Source0:	%{name}-%{version}-60.tar.lzma
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	curl
 BuildRequires:	help2man
 BuildRequires:	pkgconfig(flac)
